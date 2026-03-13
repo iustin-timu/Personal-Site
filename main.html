@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timu Iustin-Razvan | Pagină personală</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #281c59;
+      --secondary: #4e8d9c;
+      --accent: #85c79a;
+      --light: #edf7bd;
+      --white: #ffffff;
+      --shadow: 0 18px 40px rgba(40, 28, 89, 0.18);
+      --radius: 22px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(180deg, var(--light) 0%, #f8fbe8 100%);
+      color: var(--primary);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      background:
+        radial-gradient(circle at top right, rgba(133, 199, 154, 0.22), transparent 28%),
+        linear-gradient(135deg, var(--primary) 0%, #31226d 35%, var(--secondary) 100%);
+      color: var(--white);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      width: fit-content;
+      background: rgba(237, 247, 189, 0.18);
+      color: var(--light);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      max-width: 60ch;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 500;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--light);
+      color: var(--primary);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-image {
+      width: 70%;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 6px solid rgba(237, 247, 189, 0.35);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .profile-meta {
+      text-align: center;
+    }
+
+    .profile-meta h2 {
+      font-size: 1.55rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .profile-meta p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .contact-icons a {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(237, 247, 189, 0.18);
+      color: var(--light);
+      font-size: 1.3rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-icons a:hover {
+      transform: scale(1.06);
+      background: rgba(237, 247, 189, 0.28);
+    }
+
+    main {
+      padding: 4rem 0 5rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(78, 141, 156, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.85rem;
+      color: var(--primary);
+    }
+
+    .card p + p,
+    .card li + li {
+      margin-top: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 1.35rem;
+      color: var(--primary);
+    }
+
+    .skills,
+    .timeline {
+      list-style: none;
+    }
+
+    .timeline li {
+      padding-left: 1rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .timeline strong {
+      display: block;
+      color: var(--secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .hobby-list {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.7rem;
+    }
+
+    .hobby-list li {
+      position: relative;
+      padding-left: 2.2rem;
+      min-height: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .hobby-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.25rem;
+      height: 1.25rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%234e8d9c' d='M32 5l8.2 16.6 18.3 2.7-13.2 12.9 3.1 18.2L32 46.8 15.6 55.4l3.1-18.2L5.5 24.3l18.3-2.7z'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .cv-download {
+      margin-top: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .cv-download:hover {
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      text-align: center;
+      padding: 1.4rem 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: auto;
+        padding: 3.5rem 0;
+      }
+
+      .hero-content,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text {
+        order: 2;
+      }
+
+      .profile-card {
+        order: 1;
+      }
+
+      .profile-image {
+        width: 58%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card,
+      .profile-card {
+        padding: 1.35rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .profile-image {
+        width: 72%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="eyebrow">Pagină personală</span>
+        <h1>Timu Iustin-Razvan</h1>
+        <p>
+          Student pasionat de tehnologie, leadership și proiecte care aduc valoare comunității.
+          Această pagină prezintă pe scurt cine sunt, ce îmi place să fac și experiența mea.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#despre">Despre mine</a>
+          <a class="btn btn-secondary" href="#cv">Vezi CV-ul</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <img
+          class="profile-image"
+          src="poza.jpeg"
+        >
+        <div class="profile-meta">
+          <h2>Computer Engeneering</h2>
+          <p>Interes pentru dezvoltare web, organizare și inițiative studențești</p>
+        </div>
+        <div class="contact-icons">
+          <a href="mailto:timu.iustin@example.com" aria-label="Trimite email">
+            <i class="lni lni-envelope"></i>
+          </a>
+          <a href="#cv" aria-label="Vezi CV-ul">
+            <i class="lni lni-user"></i>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="despre" class="section">
+        <h2 class="section-title">Despre mine</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Prezentare</h3>
+            <p>
+              Sunt Iustin, student în anul III la specializarea Calculatoare și sunt implicat activ în viața comunității studențești din Suceava. Din 2023 fac voluntariat în cadrul ASUS, unde am ocupat funcția de prim-vicepreședinte, iar în prezent sunt președinte al organizației. Îmi place să mă implic în proiecte care contribuie la dezvoltarea comunității de studenți și a comunității de tineret din Suceava.
+În timpul liber îmi place să merg pe munte, să citesc și să învăț lucruri noi, fiind mereu interesat de dezvoltarea personală și de acumularea de experiențe care mă pot ajuta atât profesional, cât și personal..
+            </p>
+            <p>
+              Îmi doresc o prezență online clară, modernă și ușor de folosit, iar această pagină este
+              construită exact în acest stil: simplă, responsivă și bine structurată.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Hobby-uri</h3>
+            <ul class="hobby-list">
+              <li>Dezvoltare web și explorarea designului UI</li>
+              <li>Organizarea de proiecte și activități de voluntariat</li>
+              <li>Călătorii și descoperirea de locuri noi</li>
+              <li>Citit și dezvoltare personală</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="cv" class="section">
+        <h2 class="section-title">CV pe scurt</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Educație</h3>
+            <ul class="timeline">
+              <li>
+                <strong>Universitatea "Stefan cel Mare" din Suceava</strong>
+                Facultatea de Inginerie Electrică și Știința Calculatoarelor
+              </li>
+               <li>
+                <strong>Colegiul National "Dragoș Vodă"</strong>
+                Profilul Matematică Informatică
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Experiență și implicare</h3>
+            <ul class="timeline">
+              <li>
+                <strong>Președinte ASUS</strong>
+
+              </li>
+              <li>
+                <strong>Prim-vicepreședinte ASUS</strong>
+
+              </li>
+              <li>
+                <strong>Olimpic la Debate</strong>
+
+              </li>
+              <li>
+                <strong>Activități extracurriculare</strong>
+                Experiență în organizarea de excursii, baluri, spectacole și participare în debate.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Competențe</h3>
+            <ul class="skills">
+              <li>HTML, CSS & Java Script</li>
+              <li>Python</li>
+              <li>C /C++ / C#</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>Comunicare și leadership</li>
+              <li>Organizare de evenimente</li>
+              <li>Lucru în echipă</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>CV complet</h3>
+            <p>
+              Poți adăuga aici versiunea completă a CV-ului tău, fie sub formă de text, fie ca link către
+              un fișier PDF încărcat pe GitHub.
+            </p>
+            <a class="cv-download" href="#" aria-label="Descarcă CV-ul">
+              <i class="lni lni-download"></i>
+              Descarcă CV-ul
+            </a>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Timu Iustin-Razvan · Pagină personală realizată doar cu HTML și CSS</p>
+  </footer>
+</body>
+</html>
